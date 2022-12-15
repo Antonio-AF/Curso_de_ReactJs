@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10</title>
+
+    <style>
+        .cor_texto {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: end;
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        class App extends React.Component {
+            // Podemos colocar os estilos in-line nos elementos porem dentro de chaves duplas {{Estilização CSS3}}
+            // <p style={{color: "red", backgroundColor: "yellow"}}>Texto do componente</p>
+
+            render() {
+
+                // Ou podemos criar uma variavel que vai conter o conjunto chave valor da estilização desses elementos.
+                const estilo = {
+                    color: "blue",
+                    backgroundColor: "green",
+                    padding: "20px"
+                }
+                return (
+                    <div>
+                        <p style={{ color: "red", backgroundColor: "yellow", padding: "20px" }}>Texto do componente com estilização in-line!</p>
+                        <p style={estilo}>Texto do componente com estilização por bloco chave valor!</p>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById('root')
+        )
+
+    </script>
+
+</body>
+
+</html>

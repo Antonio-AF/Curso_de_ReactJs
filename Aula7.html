@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 5</title>
+    <title>Aula 7 Continuação de PROPS</title>
 </head>
 
 <body>
@@ -18,43 +18,37 @@
 
     <script type="text/babel">
 
-        class CompA extends React.Component {
+        function CompA(props){
+            return(
 
-            render() {
-                return (
+                <div><p>Nome: {props.nome}</p></div>
 
-                    <h3>Component A</h3>
-          
-                )
-
-            }
-
+            )
         }
 
-        class CompB extends React.Component {
-            render (){
-                return(
-
-                    <h3>Component B</h3>
-
-                )
-            }
+        function App(){
+            return(
+                
+                <div>
+                    <CompA nome="Ana" />
+                    <CompA nome="João" />
+                    <CompA nome="Antonio" />
+                    <CompA nome="Carla" />
+                </div>)
         }
 
-        class MeuComponente extends React.Component{
+        class Adicao extends React.Component{
             render(){
                 return(
                     <div>
-                        <CompA />
-                        <hr />
-                        <CompB />
+                        <p>O Resultado de {this.props.a} + {this.props.b} = {this.props.a + this.props.b} </p>
                     </div>
                 )
             }
         }
 
         const root = document.getElementById('root');
-        ReactDOM.render(<MeuComponente />, root);
+        ReactDOM.render(<Adicao a={10} b={20} />, root);
     </script>
 
 </body>

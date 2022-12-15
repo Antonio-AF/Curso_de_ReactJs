@@ -6,6 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 5</title>
+
+    <style>
+
+        .red{
+            background-color: red;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: end;
+        }
+        .green{
+            background-color: green;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -17,44 +37,41 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <script type="text/babel">
-
-        class CompA extends React.Component {
-
-            render() {
-                return (
-
-                    <h3>Component A</h3>
-          
-                )
-
-            }
-
-        }
-
-        class CompB extends React.Component {
-            render (){
-                return(
-
-                    <h3>Component B</h3>
-
-                )
-            }
-        }
-
-        class MeuComponente extends React.Component{
+        
+        class CompA extends React.Component{
             render(){
                 return(
-                    <div>
-                        <CompA />
-                        <hr />
-                        <CompB />
+                    <div className="red">
+                        <p>Texto do CompA</p>
                     </div>
                 )
             }
         }
 
+        class CompB extends React.Component{
+            render(){
+                return(
+                    <div className="green">
+                        <p>Texto do CompB</p>
+                    </div>
+                )
+            }
+        }
+
+        class App extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <CompA />
+                        <CompB />
+                    </div>
+                )
+            }
+        }
+        
+        
         const root = document.getElementById('root');
-        ReactDOM.render(<MeuComponente />, root);
+        ReactDOM.render(<App />, root);
     </script>
 
 </body>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 5</title>
+    <title>Aula 6 PROPS</title>
 </head>
 
 <body>
@@ -18,43 +18,32 @@
 
     <script type="text/babel">
 
-        class CompA extends React.Component {
+        function CompA(props) {
 
-            render() {
-                return (
+            return(
 
-                    <h3>Component A</h3>
-          
-                )
-
-            }
+                <div>
+                    <h1>Olá, {props.nome} {props.apelido}</h1>
+                </div>
+            )
 
         }
 
-        class CompB extends React.Component {
-            render (){
-                return(
-
-                    <h3>Component B</h3>
-
-                )
-            }
-        }
-
-        class MeuComponente extends React.Component{
+        class CompB extends React.Component{
             render(){
                 return(
+
                     <div>
-                        <CompA />
-                        <hr />
-                        <CompB />
+                        <p>Olá novamente, { this.props.nome } { this.props.apelido } </p>
                     </div>
+
                 )
             }
         }
 
+        
         const root = document.getElementById('root');
-        ReactDOM.render(<MeuComponente />, root);
+        ReactDOM.render(<CompB nome="Antonio" apelido="Amaral" />, root);
     </script>
 
 </body>
